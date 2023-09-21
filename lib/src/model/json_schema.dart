@@ -48,6 +48,8 @@ enum JsonSchemaType {
   /// SPECIAL_CASE_NONE:
   /// A special case for when the type is not defined.
   none,
+
+  qr,
 }
 
 class JsonSchema {
@@ -237,4 +239,5 @@ Map<String, JsonSchemaType> stringToJsonSchemaType = {
   'text': JsonSchemaType.text,
   'format1': JsonSchemaType.format1,
   'none': JsonSchemaType.none,
+  'qr': JsonSchemaType.qr,
 };
