@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 import 'package:simple_json_form/simple_json_form.dart';
 import 'package:simple_json_form/src/controller/simple_json_form_controller.dart';
 import 'package:simple_json_form/src/utils/constants.dart';
@@ -472,6 +473,20 @@ class _SimpleJsonFormFieldState extends State<SimpleJsonFormField> {
             children: [...widgetFormat1],
           ),
         );
+
+      case JsonSchemaType.qr:
+        return Material(
+      color: Colors.white,
+      child: SafeArea(
+        child: Center(
+          child: QrImageView(
+            data: '1234567890',
+            version: QrVersions.auto,
+            size: 250.0,
+          ),
+        ),
+      ),
+    );
 
       default:
         return Container();
